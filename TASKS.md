@@ -38,3 +38,7 @@ Este documento serve para acompanhar o progresso do desenvolvimento da Landing P
 * [✅] **T-4.2:** Garantir responsividade mobile-first impecável em todas as seções.
 * [✅] **T-4.3:** Adicionar animações sutis de transição e efeitos hover nos botões/cards.
 * [✅] **T-4.4:** Validar linter e erros de build.
+
+### Fase 5: Aprovação e Publicação Final
+* [⬜] **T-5.1:** Realizar ajustes e alterações solicitadas pelo cliente após revisão do link temporário.
+* [⬜] **T-5.2:** Fazer o apontamento de DNS para configuração do domínio definitivo no Firebase Hosting.
