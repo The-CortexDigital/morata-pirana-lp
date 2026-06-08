@@ -1,6 +1,6 @@
-# Planejamento de Copywriting e Estrutura: Morata & Pirana Advogados
+# Planejamento de Copywriting e Estrutura: 3IN Intermediações e Soluções Empresariais
 
-Este documento serve como a especificação de conteúdo e design para a Landing Page de Regularização Empresarial da **Morata & Pirana Advogados**, em parceria estratégica com a **3IN Contabilidade**.
+Este documento serve como a especificação de conteúdo e design para a Landing Page de Regularização Empresarial da **3IN Intermediações e Soluções Empresariais**, liderada por **Reginaldo Ortenzi**.
 
 ---
 
@@ -20,7 +20,7 @@ Este documento serve como a especificação de conteúdo e design para a Landing
 ### 1. Cabeçalho (Header)
 * **Visual:** Fundo transparente ou azul escuro com efeito blur ao rolar.
 * **Elementos:**
-  * Logotipo exclusivo da **Morata & Pirana Advogados** à esquerda.
+  * Logotipo da **3IN** à esquerda.
   * Botão de CTA à direita: "Falar com especialista" (estilo outline dourado, cantos levemente arredondados).
 
 ---
@@ -82,7 +82,7 @@ Este documento serve como a especificação de conteúdo e design para a Landing
   * **Citação:** `"Em 25 anos, nunca vi uma situação irregular sem solução. O que muda é o custo de resolver — e esse custo cresce a cada mês que passa."` (Fonte serifada elegante, aspas douradas).
   * **Assinatura:**
     * **Reginaldo Ortenzi**
-    * Contador — Fundador da 3IN e parceiro estratégico da Morata & Pirana.
+    * Contador — Fundador da 3IN.
 * **Coluna da Direita (Passos da Metodologia):**
   * **Badge:** "COMO FUNCIONA"
   * **Lista vertical de 4 passos com círculos numerados em dourado:**
@@ -105,25 +105,25 @@ Este documento serve como a especificação de conteúdo e design para a Landing
   * **Headline:** "Um contador que entende — e que explica."
   * **Texto:**
     "Ao longo de 25 anos, aprendi que o maior obstáculo para o empresário não é a dívida em si. É não entender exatamente o que está acontecendo — e não ter alguém de confiança para sentar junto e explicar.
-    Na 3IN, nossa parceira contábil estratégica, cada caso é analisado com atenção individual em conjunto com o corpo jurídico da Morata & Pirana Advogados. Não existe solução genérica, não existe resposta automática. Existe o tempo necessário para entender a situação real da sua empresa e apresentar o melhor caminho.
+    Na 3IN, cada caso é analisado com atenção individual. Não existe solução genérica, não existe resposta automática. Existe o tempo necessário para entender a situação real da sua empresa e apresentar o melhor caminho.
     Se você está com pendência fiscal, não precisa resolver sozinho — e não precisa ter vergonha de chegar com um problema. Faz parte da trajetória de qualquer empresa. O que importa é o que você faz a partir de agora."
 * **Métricas (Abaixo das colunas, em linha horizontal):**
   * **25+** anos de experiência
-  * **2007** fundação da 3IN (parceira contábil)
-  * **100%** atendimento personalizado e integrado
+  * **2007** fundação da 3IN
+  * **100%** atendimento personalizado
 
 ---
 
-### 6. Seção Proposta de Valor ("O que entregamos")
+### 6. Seção Proposta de Valor ("O que a 3IN entrega")
 * **Fundo:** Branco (`#FFFFFF`).
-* **Headline:** "O que a Morata & Pirana entrega para você"
+* **Headline:** "O que a 3IN entrega para você"
 * **Subheadline:** "Regularização não é só resolver o problema de hoje. É garantir que amanhã sua empresa esteja protegida para crescer."
 * **Grid de 4 Cards (2x2 no Desktop):**
   * Cada card possui um número grande em dourado (01, 02, 03, 04) e bordas arredondadas com fundo bege claro ou branco:
     * **01. Diagnóstico fiscal completo:** Análise completa da situação cadastral, fiscal e tributária da sua empresa. Você entende tudo — o que está bem e o que precisa de atenção.
     * **02. Regularização de CNPJ e débitos:** Pendências na Receita Federal, inscrições estaduais e municipais, certidões bloqueadas — cuidamos de todo o processo de regularização.
     * **03. Revisão e recuperação tributária:** Identificamos se sua empresa pagou impostos a mais nos últimos 5 anos — e abrimos o processo de restituição quando encontramos algo.
-    * **04. Assessoria contábil mensal:** Depois de regularizar, garantimos que sua empresa nunca mais acumule pendências. Acompanhamento mensal com transparência total através da nossa parceira 3IN.
+    * **04. Assessoria contábil mensal:** Depois de regularizar, garantimos que sua empresa nunca mais acumule pendências. Acompanhamento mensal com transparência total.
 
 ---
 
@@ -143,5 +143,5 @@ Este documento serve como a especificação de conteúdo e design para a Landing
 ### 8. Rodapé (Footer)
 * **Fundo:** Azul Escuro (`#0B2545`) com borda superior fina dourada.
 * **Elementos:**
-  * Logotipo da **Morata & Pirana Advogados** à esquerda.
-  * Texto de copyright à direita: `© 2026 Morata & Pirana Advogados em parceria com 3IN Contabilidade. Todos os direitos reservados.`
+  * Logotipo da **3IN** à esquerda.
+  * Texto de copyright à direita: `© 2026 3IN Intermediações e Soluções Empresariais. Todos os direitos reservados.`

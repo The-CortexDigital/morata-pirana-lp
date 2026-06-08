@@ -51,7 +51,7 @@ export default function ComoFunciona() {
                     Reginaldo Ortenzi
                   </strong>
                   <span className="text-xs text-gray-400 mt-1">
-                    Contador &mdash; Fundador da 3IN e parceiro estratégico da Morata &amp; Pirana
+                    Contador &mdash; Fundador da 3IN
                   </span>
                 </footer>
               </blockquote>

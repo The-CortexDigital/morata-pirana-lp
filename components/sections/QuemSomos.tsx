@@ -6,11 +6,11 @@ export default function QuemSomos() {
     },
     {
       value: "2007",
-      label: "Fundação da 3IN (parceira contábil)",
+      label: "Fundação da 3IN",
     },
     {
       value: "100%",
-      label: "Atendimento personalizado e integrado",
+      label: "Atendimento personalizado",
     },
   ];
 
@@ -82,7 +82,7 @@ export default function QuemSomos() {
                 Ao longo de 25 anos, aprendi que o maior obstáculo para o empresário não é a dívida em si. É não entender exatamente o que está acontecendo &mdash; e não ter alguém de confiança para sentar junto e explicar.
               </p>
               <p>
-                Na <strong className="text-primary">3IN</strong>, nossa parceira contábil estratégica, cada caso é analisado com atenção individual em conjunto com o corpo jurídico da <strong className="text-primary">Morata &amp; Pirana Advogados</strong>. Não existe solução genérica, não existe resposta automática. Existe o tempo necessário para entender a situação real da sua empresa e apresentar o melhor caminho.
+                Na <strong className="text-primary">3IN</strong>, cada caso é analisado com atenção individual. Não existe solução genérica, não existe resposta automática. Existe o tempo necessário para entender a situação real da sua empresa e apresentar o melhor caminho.
               </p>
               <p>
                 Se você está com pendência fiscal, não precisa resolver sozinho &mdash; e não precisa ter vergonha de chegar com um problema. Faz parte da trajetória de qualquer empresa. O que importa é o que você faz a partir de agora.

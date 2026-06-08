@@ -1,25 +1,19 @@
----
-description: Regras de desenvolvimento e identidade visual para a Landing Page da Morata & Pirana Advogados.
-globs: **/*.{ts,tsx,css,json}
-alwaysApply: true
----
-
-# Diretrizes de Desenvolvimento: Morata & Pirana Advogados
+# Diretrizes de Desenvolvimento: 3IN Intermediações e Soluções Empresariais
 
 Este arquivo define os padrões de código, design e posicionamento de marca para todos os agentes e desenvolvedores que trabalharem neste projeto.
 
-## 1. Posicionamento de Marca e Co-branding
+## 1. Posicionamento de Marca e Identidade
 
-* **Destaque Principal:** O logotipo exclusivo da **Morata & Pirana Advogados** deve ser exibido em destaque absoluto no topo (cabeçalho) e no rodapé.
-* **Integração da Parceria:** A **3IN Contabilidade** e o contador **Reginaldo Ortenzi** devem ser apresentados estritamente de forma textual e integrada ao conteúdo das seções (Seção 3: Frase de Impacto, Seção 4: Quem vai cuidar do seu caso, Seção 5: Proposta de Valor e Rodapé).
-* **NÃO EXIBIR** o logotipo da 3IN no cabeçalho ou em destaque superior.
+* **Destaque Principal:** O logotipo exclusivo da **3IN** deve ser exibido em destaque absoluto no topo (cabeçalho) e no rodapé.
+* **Figura Central:** O contador e consultor **Reginaldo Ortenzi** deve ser apresentado como o fundador e líder da 3IN, sendo a figura central de autoridade e confiança na página.
+* **Foco dos Serviços:** Regularização empresarial, diagnóstico fiscal, regularização de CNPJ e débitos, revisão tributária e assessoria contábil mensal.
 
 ## 2. Identidade Visual e Cores
 
 Siga rigorosamente a paleta de cores definida nos mockups:
-* **Azul Escuro (Primary):** `#0B2545` (usar para fundos de seções escuras, cabeçalho e rodapé).
+* **Azul Escuro (Primary):** `#0B2545` (usar para fundos de seções escuras, cabeçalho, rodapé e elementos principais).
 * **Dourado/Bronze (Accent):** `#C5A059` (usar para botões de CTA, bordas finas, números de destaque e ênfases textuais).
-* **Bege/Creme Claro (Secondary):** `#F4EFEA` (usar como fundo de seções de contraste como "Quem vai cuidar do seu caso" e "O que a Morata & Pirana entrega").
+* **Bege/Creme Claro (Secondary):** `#F4EFEA` (usar como fundo de seções de contraste como "Quem vai cuidar do seu caso" e cards de soluções).
 * **Verde WhatsApp:** `#25D366` (usar exclusivamente no botão de contato direto via WhatsApp).
 * **Branco:** `#FFFFFF` (fundo de cards e texto em seções escuras).
 
@@ -28,30 +22,30 @@ Siga rigorosamente a paleta de cores definida nos mockups:
 * **Framework:** Next.js (App Router) com React e TypeScript estrito.
 * **Estilização:** Tailwind CSS de forma responsiva (Mobile-First).
 * **Componentes:** Componentes funcionais e modulares, divididos por seções na pasta `components/sections/`.
-* **Sem Comentários Redundantes:** Evite comentários óbvios que apenas narram o código (ex: `// Import React`, `// Render component`). Comente apenas decisões de design ou lógicas complexas.
+* **Sem Comentários Redundantes:** Evite comentários óbvios que apenas narram o código. Comente apenas decisões de design ou lógicas complexas.
 * **Otimização:** Use o componente `next/image` para imagens e `next/font` para tipografia otimizada.
 
 ## 4. Estrutura de Pastas Esperada
 
 ```
 app/
-  layout.tsx
-  page.tsx
-  globals.css
+ layout.tsx
+ page.tsx
+ globals.css
 components/
-  Header.tsx
-  Footer.tsx
-  sections/
-    Hero.tsx
-    Dores.tsx
-    ComoFunciona.tsx
-    QuemSomos.tsx
-    Entregas.tsx
-    CtaFinal.tsx
-  ui/
-    Button.tsx
-    Card.tsx
+ Header.tsx
+ Footer.tsx
+ sections/
+ Hero.tsx
+ Dores.tsx
+ ComoFunciona.tsx
+ QuemSomos.tsx
+ Entregas.tsx
+ CtaFinal.tsx
+ ui/
+ Button.tsx
+ Card.tsx
 public/
-  assets/
-    logo-morata-pirana.png
+ assets/
+ logo-3in.png
 ```

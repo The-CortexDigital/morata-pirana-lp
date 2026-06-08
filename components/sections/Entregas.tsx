@@ -18,7 +18,7 @@ export default function Entregas() {
     {
       number: "04",
       title: "Assessoria contábil mensal",
-      text: "Depois de regularizar, garantimos que sua empresa nunca mais acumule pendências. Acompanhamento mensal com transparência total através da nossa parceira 3IN.",
+      text: "Depois de regularizar, garantimos que sua empresa nunca mais acumule pendências. Acompanhamento mensal com transparência total.",
     },
   ];
 
@@ -32,7 +32,7 @@ export default function Entregas() {
             Proposta de Valor
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-primary tracking-tight">
-            O que a Morata &amp; Pirana entrega para você
+            O que a 3IN entrega para você
           </h2>
           <p className="mt-4 text-gray-600 text-base sm:text-lg leading-relaxed">
             Regularização não é só resolver o problema de hoje. É garantir que amanhã sua empresa esteja protegida para crescer.

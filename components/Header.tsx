@@ -41,21 +41,21 @@ export default function Header() {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <div className="flex items-center gap-3">
-            <div className="relative w-12 h-12 overflow-hidden rounded-md border border-accent/20">
+            <div className="relative w-12 h-12 overflow-hidden rounded-md">
               <Image
-                src="/assets/logo-morata-pirana.png"
-                alt="Morata &amp; Pirana Advogados"
+                src="/assets/logo-3in.png"
+                alt="3IN Intermediações e Soluções Empresariais"
                 fill
-                className="object-cover"
+                className="object-contain"
                 priority
               />
             </div>
             <div className="flex flex-col">
               <span className="font-serif text-lg sm:text-xl font-bold tracking-wide text-white leading-none">
-                Morata &amp; Pirana
+                3IN
               </span>
-              <span className="text-[9px] tracking-[0.3em] uppercase text-accent font-sans font-semibold mt-1">
-                Advogados
+              <span className="text-[8px] tracking-[0.1em] uppercase text-accent font-sans font-semibold mt-1">
+                Intermediações &amp; Soluções
               </span>
             </div>
           </div>
