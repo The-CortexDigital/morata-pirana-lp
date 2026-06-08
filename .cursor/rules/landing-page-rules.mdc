@@ -10,12 +10,15 @@ Este arquivo define os padrões de código, design e posicionamento de marca par
 
 ## 2. Identidade Visual e Cores
 
-Siga rigorosamente a paleta de cores definida nos mockups:
-* **Azul Escuro (Primary):** `#0B2545` (usar para fundos de seções escuras, cabeçalho, rodapé e elementos principais).
-* **Dourado/Bronze (Accent):** `#C5A059` (usar para botões de CTA, bordas finas, números de destaque e ênfases textuais).
-* **Bege/Creme Claro (Secondary):** `#F4EFEA` (usar como fundo de seções de contraste como "Quem vai cuidar do seu caso" e cards de soluções).
-* **Verde WhatsApp:** `#25D366` (usar exclusivamente no botão de contato direto via WhatsApp).
-* **Branco:** `#FFFFFF` (fundo de cards e texto em seções escuras).
+Siga rigorosamente a paleta definida em `STYLE.md`:
+* **Azul Principal (Primary):** `#0E293E` (fundos escuros, cabeçalho, rodapé, títulos).
+* **Azul Secundário (Primary Light):** `#283C50` (destaques em fundo claro, badges, números).
+* **Carvão (Charcoal):** `#21242D` (texto corrido em fundos claros).
+* **Superfície (Surface):** `#F0F0F0` (fundos alternados, destaques em fundo escuro).
+* **Branco:** `#FFFFFF` (cards, texto em seções escuras).
+* **Verde WhatsApp:** `#25D366` (botões de contato via WhatsApp).
+
+Tipografia: **Playfair Display** para títulos (`font-serif`), **Inter / Roboto** para textos e botões (`font-sans`).
 
 ## 3. Padrões de Código e Tecnologias
 

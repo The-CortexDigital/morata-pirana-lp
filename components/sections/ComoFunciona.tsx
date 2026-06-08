@@ -24,20 +24,17 @@ export default function ComoFunciona() {
 
   return (
     <section id="como-funciona" className="bg-primary text-white py-20 lg:py-28 relative overflow-hidden">
-      {/* Background elements */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-accent"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-accent"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-white/30"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-white/20"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Left Column: Impact Quote */}
           <div className="lg:col-span-5 lg:sticky lg:top-28">
             <div className="relative bg-white/5 border border-white/10 rounded-2xl p-8 sm:p-10 backdrop-blur-sm">
-              {/* Large quote mark */}
-              <span className="absolute -top-6 -left-2 text-7xl font-serif text-accent opacity-50 select-none">
+              <span className="absolute -top-6 -left-2 text-7xl font-serif text-surface opacity-50 select-none">
                 &ldquo;
               </span>
               
@@ -47,7 +44,7 @@ export default function ComoFunciona() {
                 </p>
                 
                 <footer className="mt-8 pt-6 border-t border-white/10 flex flex-col">
-                  <strong className="text-lg text-accent font-sans">
+                  <strong className="text-lg text-surface font-sans">
                     Reginaldo Ortenzi
                   </strong>
                   <span className="text-xs text-gray-400 mt-1">
@@ -58,10 +55,9 @@ export default function ComoFunciona() {
             </div>
           </div>
 
-          {/* Right Column: Steps */}
           <div className="lg:col-span-7 flex flex-col space-y-8">
             <div>
-              <span className="inline-block bg-accent/10 border border-accent/30 text-accent px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4">
+              <span className="inline-block bg-white/10 border border-white/20 text-surface px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4">
                 Como Funciona
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-white">
@@ -69,18 +65,15 @@ export default function ComoFunciona() {
               </h2>
             </div>
 
-            {/* Vertical timeline list */}
-            <div className="relative border-l border-accent/20 pl-6 sm:pl-8 ml-4 sm:ml-6 space-y-12 py-2">
+            <div className="relative border-l border-white/20 pl-6 sm:pl-8 ml-4 sm:ml-6 space-y-12 py-2">
               {passos.map((passo, idx) => (
                 <div key={idx} className="relative group">
-                  {/* Circle number */}
-                  <div className="absolute -left-[43px] sm:-left-[49px] top-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary border-2 border-accent flex items-center justify-center text-accent font-bold text-sm sm:text-base group-hover:bg-accent group-hover:text-primary transition-all duration-300 shadow-md">
+                  <div className="absolute -left-[43px] sm:-left-[49px] top-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary border-2 border-surface flex items-center justify-center text-surface font-bold text-sm sm:text-base group-hover:bg-surface group-hover:text-primary transition-all duration-300 shadow-md">
                     {passo.number}
                   </div>
 
-                  {/* Step Content */}
                   <div className="space-y-2">
-                    <h3 className="font-serif text-xl font-bold text-white group-hover:text-accent transition-colors duration-300">
+                    <h3 className="font-serif text-xl font-bold text-white group-hover:text-surface transition-colors duration-300">
                       {passo.title}
                     </h3>
                     <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-xl">

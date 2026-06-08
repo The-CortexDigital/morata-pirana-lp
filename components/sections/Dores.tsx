@@ -38,7 +38,6 @@ export default function Dores() {
     <section id="dores" className="bg-white py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-primary tracking-tight">
             Você reconhece alguma dessas situações?
@@ -48,23 +47,20 @@ export default function Dores() {
           </p>
         </div>
 
-        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {cards.map((card, idx) => {
             const IconComponent = card.icon;
             return (
               <div
                 key={idx}
-                className="group relative bg-white p-6 sm:p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-accent/30 transition-all duration-300 flex flex-col justify-between"
+                className="group relative bg-white p-6 sm:p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary-light/30 transition-all duration-300 flex flex-col justify-between"
               >
                 <div className="space-y-4">
-                  {/* Icon Container */}
-                  <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center text-accent group-hover:bg-primary group-hover:text-accent transition-all duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-surface flex items-center justify-center text-primary-light group-hover:bg-primary group-hover:text-white transition-all duration-300">
                     <IconComponent className="w-6 h-6" />
                   </div>
                   
-                  {/* Content */}
-                  <h3 className="font-serif text-xl font-bold text-primary group-hover:text-accent transition-colors duration-300">
+                  <h3 className="font-serif text-xl font-bold text-primary group-hover:text-primary-light transition-colors duration-300">
                     {card.title}
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -72,8 +68,7 @@ export default function Dores() {
                   </p>
                 </div>
 
-                {/* Subtle gold line at the bottom on hover */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-b-2xl"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary-light scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-b-2xl"></div>
               </div>
             );
           })}

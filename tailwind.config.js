@@ -7,17 +7,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#0B2545", // Azul Escuro
-        accent: "#C5A059",  // Dourado/Bronze
-        secondary: "#F4EFEA", // Bege/Creme Claro
-        whatsapp: "#25D366", // Verde WhatsApp
-        darkGray: "#333333", // Cinza Escuro
+        primary: {
+          DEFAULT: "var(--color-primary)",
+          light: "var(--color-primary-light)",
+        },
+        charcoal: "var(--color-charcoal)",
+        surface: "var(--color-surface)",
+        whatsapp: "var(--color-whatsapp)",
       },
       fontFamily: {
-        serif: ["var(--font-playfair)", "serif"],
-        sans: ["var(--font-inter)", "sans-serif"],
+        serif: ["var(--font-serif)"],
+        sans: ["var(--font-sans)"],
       },
     },
   },
   plugins: [],
-}
+};

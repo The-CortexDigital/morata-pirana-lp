@@ -3,7 +3,25 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Brand colors */
+    --color-primary: #0e293e;
+    --color-primary-light: #283c50;
+    --color-charcoal: #21242d;
+    --color-surface: #f0f0f0;
+    --color-white: #ffffff;
+    --color-whatsapp: #25d366;
+
+    /* Typography */
+    --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
+    --font-sans: var(--font-inter), var(--font-roboto), system-ui, sans-serif;
+  }
+
   html {
     scroll-behavior: smooth;
+  }
+
+  body {
+    color: var(--color-charcoal);
   }
 }

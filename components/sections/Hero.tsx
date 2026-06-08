@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Check, ArrowRight } from "lucide-react";
+import { CONTACT } from "@/lib/brand";
 
 export default function Hero() {
   const [name, setName] = useState("");
@@ -9,7 +10,6 @@ export default function Hero() {
   const [situation, setSituation] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  // Simple phone masking (99) 99999-9999
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let value = e.target.value.replace(/\D/g, "");
     if (value.length > 11) value = value.slice(0, 11);
@@ -24,6 +24,11 @@ export default function Hero() {
     setPhone(value);
   };
 
+  const buildWhatsappUrl = () => {
+    const formattedMsg = `Olá! Gostaria de solicitar um diagnóstico gratuito.\n\n*Nome:* ${name}\n*WhatsApp:* ${phone}\n*Situação:* ${situation}`;
+    return `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(formattedMsg)}`;
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !phone || !situation) {
@@ -31,39 +36,29 @@ export default function Hero() {
       return;
     }
     setSubmitted(true);
-
-    // Create WhatsApp message
-    const formattedMsg = `Olá! Gostaria de solicitar um diagnóstico gratuito.\n\n*Nome:* ${name}\n*WhatsApp:* ${phone}\n*Situação:* ${situation}`;
-    const encodedMsg = encodeURIComponent(formattedMsg);
-    // WhatsApp link
-    const whatsappUrl = `https://wa.me/5511999999999?text=${encodedMsg}`;
-    
-    // Automatically open WhatsApp after a short delay to let the user see the success state
     setTimeout(() => {
-      window.open(whatsappUrl, "_blank");
+      window.open(buildWhatsappUrl(), "_blank");
     }, 1500);
   };
 
   return (
     <section id="hero" className="relative bg-primary text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-      {/* Subtle background decoration */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-accent blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-accent blur-3xl"></div>
+        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-primary-light blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-primary-light blur-3xl"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          {/* Left Column: Content */}
           <div className="lg:col-span-7 flex flex-col space-y-6">
             <div>
-              <span className="inline-block bg-accent/10 border border-accent/30 text-accent px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4">
+              <span className="inline-block bg-white/10 border border-white/20 text-surface px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4">
                 Regularização Empresarial
               </span>
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
                 Sua empresa tem pendência fiscal? <br />
-                <span className="text-accent">A gente resolve.</span>
+                <span className="text-surface">A gente resolve.</span>
               </h1>
             </div>
             
@@ -71,32 +66,30 @@ export default function Hero() {
               CNPJ restrito, débito na Receita Federal, certidão bloqueada — esses problemas têm solução. E quanto antes você olha para eles, menor o custo de resolver. Há 18 anos ajudamos empresas a sair dessa situação com clareza e sem surpresas.
             </p>
 
-            {/* Bullets */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
               <div className="flex items-center gap-3">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center">
-                  <Check className="w-3.5 h-3.5 text-accent" />
+                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-white/10 border border-white/20 flex items-center justify-center">
+                  <Check className="w-3.5 h-3.5 text-surface" />
                 </div>
                 <span className="text-sm font-medium text-gray-200">Desde 2007</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center">
-                  <Check className="w-3.5 h-3.5 text-accent" />
+                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-white/10 border border-white/20 flex items-center justify-center">
+                  <Check className="w-3.5 h-3.5 text-surface" />
                 </div>
                 <span className="text-sm font-medium text-gray-200">+25 anos de exp.</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center">
-                  <Check className="w-3.5 h-3.5 text-accent" />
+                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-white/10 border border-white/20 flex items-center justify-center">
+                  <Check className="w-3.5 h-3.5 text-surface" />
                 </div>
                 <span className="text-sm font-medium text-gray-200">Atendimento personalizado</span>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Form Card */}
           <div id="diagnostico" className="lg:col-span-5">
-            <div className="bg-white text-darkGray rounded-2xl p-6 sm:p-8 shadow-2xl border border-gray-100 relative">
+            <div className="bg-white text-charcoal rounded-2xl p-6 sm:p-8 shadow-2xl border border-gray-100 relative">
               {!submitted ? (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="text-center pb-2 border-b border-gray-100">
@@ -108,9 +101,8 @@ export default function Hero() {
                     </p>
                   </div>
 
-                  {/* Name Input */}
                   <div className="space-y-1.5">
-                    <label htmlFor="name" className="text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                    <label htmlFor="name" className="text-xs font-semibold text-charcoal uppercase tracking-wider">
                       Seu nome
                     </label>
                     <input
@@ -120,13 +112,12 @@ export default function Hero() {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Ex: João Silva"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all text-sm"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-light/50 focus:border-primary-light transition-all text-sm"
                     />
                   </div>
 
-                  {/* Phone Input */}
                   <div className="space-y-1.5">
-                    <label htmlFor="phone" className="text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                    <label htmlFor="phone" className="text-xs font-semibold text-charcoal uppercase tracking-wider">
                       WhatsApp
                     </label>
                     <input
@@ -136,13 +127,12 @@ export default function Hero() {
                       value={phone}
                       onChange={handlePhoneChange}
                       placeholder="(11) 99999-9999"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all text-sm"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-light/50 focus:border-primary-light transition-all text-sm"
                     />
                   </div>
 
-                  {/* Situation Select */}
                   <div className="space-y-1.5">
-                    <label htmlFor="situation" className="text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                    <label htmlFor="situation" className="text-xs font-semibold text-charcoal uppercase tracking-wider">
                       Qual é a sua situação?
                     </label>
                     <select
@@ -150,7 +140,7 @@ export default function Hero() {
                       required
                       value={situation}
                       onChange={(e) => setSituation(e.target.value)}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all text-sm bg-white"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-light/50 focus:border-primary-light transition-all text-sm bg-white"
                     >
                       <option value="">Selecione...</option>
                       <option value="CNPJ com pendência / irregular">CNPJ com pendência / irregular</option>
@@ -161,10 +151,9 @@ export default function Hero() {
                     </select>
                   </div>
 
-                  {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full bg-accent hover:bg-accent/90 text-primary font-bold py-3.5 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-accent/20 hover:shadow-accent/30 group text-sm"
+                    className="w-full bg-primary hover:bg-primary-light text-white font-bold py-3.5 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-primary/20 group text-sm"
                   >
                     Quero meu diagnóstico gratuito
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -201,10 +190,7 @@ export default function Hero() {
                     Redirecionando para o WhatsApp em instantes...
                   </p>
                   <button
-                    onClick={() => {
-                      const formattedMsg = `Olá! Gostaria de solicitar um diagnóstico gratuito.\n\n*Nome:* ${name}\n*WhatsApp:* ${phone}\n*Situação:* ${situation}`;
-                      window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(formattedMsg)}`, "_blank");
-                    }}
+                    onClick={() => window.open(buildWhatsappUrl(), "_blank")}
                     className="mt-4 bg-whatsapp hover:bg-whatsapp/90 text-white font-bold py-2.5 px-6 rounded-lg transition-all text-xs flex items-center gap-2"
                   >
                     Ir para o WhatsApp agora

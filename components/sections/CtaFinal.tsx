@@ -1,50 +1,42 @@
 import { Phone } from "lucide-react";
+import { CONTACT } from "@/lib/brand";
 
 export default function CtaFinal() {
-  const whatsappNumber = "5511999999999";
-  const phoneNumber = "+5511999999999";
   const defaultMsg = "Olá! Vi a landing page de regularização empresarial e gostaria de falar com um especialista.";
   const encodedMsg = encodeURIComponent(defaultMsg);
 
   return (
     <section id="cta-final" className="relative bg-primary text-white py-20 lg:py-28 overflow-hidden text-center">
-      {/* Concentric circular graphics in background */}
       <div className="absolute inset-0 opacity-10 pointer-events-none flex items-center justify-center">
-        <div className="w-[1000px] h-[1000px] rounded-full border border-accent/30 animate-pulse"></div>
-        <div className="absolute w-[800px] h-[800px] rounded-full border border-accent/20"></div>
-        <div className="absolute w-[600px] h-[600px] rounded-full border border-accent/10"></div>
-        <div className="absolute w-[400px] h-[400px] rounded-full border border-accent/5"></div>
+        <div className="w-[1000px] h-[1000px] rounded-full border border-white/30 animate-pulse"></div>
+        <div className="absolute w-[800px] h-[800px] rounded-full border border-white/20"></div>
+        <div className="absolute w-[600px] h-[600px] rounded-full border border-white/10"></div>
+        <div className="absolute w-[400px] h-[400px] rounded-full border border-white/5"></div>
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        {/* Badge */}
         <div>
-          <span className="inline-block bg-accent/10 border border-accent/30 text-accent px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase">
+          <span className="inline-block bg-white/10 border border-white/20 text-surface px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase">
             Primeiro Passo
           </span>
         </div>
 
-        {/* Headline */}
         <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
           Comece com uma conversa. <br />
-          <span className="text-accent">Sem compromisso.</span>
+          <span className="text-surface">Sem compromisso.</span>
         </h2>
 
-        {/* Subheadline */}
         <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
           Oferecemos um diagnóstico inicial gratuito. Você entende a situação real da sua empresa e o que precisa ser feito &mdash; sem pressão, sem surpresa.
         </p>
 
-        {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-          {/* WhatsApp Button */}
           <a
-            href={`https://wa.me/${whatsappNumber}?text=${encodedMsg}`}
+            href={`https://wa.me/${CONTACT.whatsapp}?text=${encodedMsg}`}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto bg-whatsapp hover:bg-whatsapp/90 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 flex items-center justify-center gap-3 shadow-lg shadow-whatsapp/20 group text-sm sm:text-base"
           >
-            {/* Custom WhatsApp SVG Icon */}
             <svg
               className="w-5 h-5 fill-current"
               viewBox="0 0 24 24"
@@ -55,19 +47,17 @@ export default function CtaFinal() {
             Falar pelo WhatsApp
           </a>
 
-          {/* Phone Button */}
           <a
-            href={`tel:${phoneNumber}`}
-            className="w-full sm:w-auto border border-white hover:border-accent hover:text-accent font-bold py-4 px-8 rounded-lg transition-all duration-300 flex items-center justify-center gap-3 text-sm sm:text-base"
+            href={`tel:${CONTACT.phoneTel}`}
+            className="w-full sm:w-auto border border-white hover:bg-white hover:text-primary font-bold py-4 px-8 rounded-lg transition-all duration-300 flex items-center justify-center gap-3 text-sm sm:text-base"
           >
             <Phone className="w-5 h-5" />
-            Ligar agora
+            Ligar agora — {CONTACT.whatsappDisplay}
           </a>
         </div>
 
-        {/* Supporting Text */}
-        <p className="text-gray-400 text-xs sm:text-sm pt-6 border-t border-white/10 max-w-xl mx-auto">
-          São Bernardo do Campo - SP - Edifício DOMO Business, Torre B, 11º andar
+        <p className="text-gray-400 text-xs sm:text-sm pt-6 border-t border-white/10 max-w-2xl mx-auto leading-relaxed">
+          {CONTACT.address.full}
         </p>
       </div>
     </section>

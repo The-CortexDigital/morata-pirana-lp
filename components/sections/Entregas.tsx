@@ -23,12 +23,11 @@ export default function Entregas() {
   ];
 
   return (
-    <section id="entregas" className="bg-white py-20 lg:py-28 text-darkGray">
+    <section id="entregas" className="bg-white py-20 lg:py-28 text-charcoal">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block bg-accent/10 border border-accent/30 text-accent px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4">
+          <span className="inline-block bg-primary-light/10 border border-primary-light/30 text-primary-light px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4">
             Proposta de Valor
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-primary tracking-tight">
@@ -39,25 +38,22 @@ export default function Entregas() {
           </p>
         </div>
 
-        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {entregas.map((entrega, idx) => (
             <div
               key={idx}
-              className="group bg-secondary p-8 sm:p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:bg-white hover:border-accent/30 transition-all duration-300 relative overflow-hidden"
+              className="group bg-surface p-8 sm:p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:bg-white hover:border-primary-light/30 transition-all duration-300 relative overflow-hidden"
             >
-              {/* Large number in background */}
-              <div className="absolute top-4 right-6 font-serif text-6xl sm:text-7xl font-bold text-accent/10 group-hover:text-accent/20 transition-colors duration-300 select-none">
+              <div className="absolute top-4 right-6 font-serif text-6xl sm:text-7xl font-bold text-primary-light/10 group-hover:text-primary-light/20 transition-colors duration-300 select-none">
                 {entrega.number}
               </div>
 
               <div className="relative z-10 space-y-4 max-w-md">
-                {/* Small number badge */}
-                <span className="inline-block font-serif text-lg font-bold text-accent">
+                <span className="inline-block font-serif text-lg font-bold text-primary-light">
                   {entrega.number}.
                 </span>
                 
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-primary group-hover:text-accent transition-colors duration-300">
+                <h3 className="font-serif text-xl sm:text-2xl font-bold text-primary group-hover:text-primary-light transition-colors duration-300">
                   {entrega.title}
                 </h3>
                 
