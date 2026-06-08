@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Logo from "@/components/Logo";
 
 export default function Footer() {
   return (
@@ -6,13 +6,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
-          <div className="relative w-32 h-32 md:w-36 md:h-36 -my-4 overflow-hidden">
-            <Image
-              src="/assets/logo-3in.png"
-              alt="3IN Intermediações e Soluções Empresariais"
-              fill
-              className="object-contain"
-            />
+          <div className="relative w-32 h-32 md:w-36 md:h-36 -my-4">
+            <Logo variant="branco" />
           </div>
 
           {/* Copyright & Co-branding */}
@@ -21,7 +16,15 @@ export default function Footer() {
               &copy; 2026 3IN Intermediações e Soluções Empresariais.
             </p>
             <p className="mt-1 text-xs text-gray-500">
-              Todos os direitos reservados.
+              Todos os direitos reservados. &mdash; BY{" "}
+              <a
+                href="https://thecortexdigital.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:text-white transition-colors duration-300"
+              >
+                Cortex Digital
+              </a>
             </p>
           </div>
         </div>

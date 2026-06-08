@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
+import Logo from "@/components/Logo";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,14 +40,8 @@ export default function Header() {
           className="flex items-center cursor-pointer select-none" 
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          <div className="relative w-24 h-24 sm:w-28 sm:h-28 -my-6 sm:-my-8 overflow-hidden transition-all duration-300">
-            <Image
-              src="/assets/logo-3in.png"
-              alt="3IN Intermediações e Soluções Empresariais"
-              fill
-              className="object-contain"
-              priority
-            />
+          <div className="relative w-24 h-24 sm:w-28 sm:h-28 -my-6 sm:-my-8 transition-all duration-300">
+            <Logo variant="branco" priority />
           </div>
         </div>
 

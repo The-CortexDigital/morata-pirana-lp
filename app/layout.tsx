@@ -15,8 +15,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Morata & Pirana Advogados | Regularização Empresarial",
-  description: "Sua empresa tem pendência fiscal? Nós resolvemos. Diagnóstico gratuito em até 24h para regularização de CNPJ, débitos na Receita Federal e certidões bloqueadas.",
+  title: "3IN Intermediações e Soluções Empresariais | Regularização Empresarial",
+  description: "Sua empresa tem pendência fiscal? A 3IN resolve. Diagnóstico gratuito em até 24h para regularização de CNPJ, débitos na Receita Federal e certidões bloqueadas.",
 };
 
 export default function RootLayout({

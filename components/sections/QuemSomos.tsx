@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function QuemSomos() {
   const metricas = [
     {
@@ -23,7 +25,7 @@ export default function QuemSomos() {
           
           {/* Left Column: Visual Card */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-sm bg-primary text-white rounded-2xl p-8 shadow-xl border border-accent/20 overflow-hidden group">
+            <div className="relative w-full max-w-md bg-primary text-white rounded-2xl p-8 shadow-xl border border-accent/20 overflow-hidden group">
               
               {/* Watermark "RO" */}
               <div className="absolute -right-8 -bottom-8 text-9xl font-serif font-bold text-white/5 pointer-events-none select-none group-hover:scale-110 transition-transform duration-500">
@@ -31,22 +33,20 @@ export default function QuemSomos() {
               </div>
 
               {/* Stylized Avatar / Silhouette Representation */}
-              <div className="relative z-10 flex flex-col items-center py-10 space-y-6">
-                <div className="w-28 h-28 rounded-full bg-accent/10 border-2 border-accent flex items-center justify-center shadow-inner">
-                  {/* Elegant professional silhouette icon */}
-                  <svg
-                    className="w-16 h-16 text-accent"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1"
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                    />
-                  </svg>
+              <div className="relative z-10 flex flex-col items-center py-8 space-y-6">
+                <div className="relative">
+                  <div className="absolute inset-0 rounded-full bg-accent/20 blur-md scale-110" aria-hidden="true" />
+                  <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full p-1.5 bg-gradient-to-br from-accent via-accent/80 to-accent/40 shadow-lg">
+                    <div className="relative w-full h-full rounded-full overflow-hidden ring-2 ring-white/20">
+                      <Image
+                        src="/assets/reginado_02.png"
+                        alt="Reginaldo Ortenzi, contador e consultor fundador da 3IN"
+                        fill
+                        className="object-cover object-center"
+                        sizes="(max-width: 640px) 192px, 224px"
+                      />
+                    </div>
+                  </div>
                 </div>
 
                 <div className="text-center space-y-1">
