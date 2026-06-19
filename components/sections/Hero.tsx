@@ -43,6 +43,17 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative bg-primary text-white pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center pointer-events-none"
+        style={{ backgroundImage: "url('/assets/hero-img.png')" }}
+      ></div>
+      {/* Base tint so the brand color stays present over the photo */}
+      <div className="absolute inset-0 bg-primary/60 pointer-events-none"></div>
+      {/* Darker on the left (where the text lives) fading toward the right */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/70 to-primary/20 pointer-events-none"></div>
+      {/* Extra darkening at the very top for menu legibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-transparent to-transparent pointer-events-none"></div>
+
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-primary-light blur-3xl"></div>
         <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-primary-light blur-3xl"></div>
@@ -53,7 +64,7 @@ export default function Hero() {
           
           <div className="lg:col-span-7 flex flex-col space-y-6">
             <div>
-              <span className="inline-block bg-white/10 border border-white/20 text-surface px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4">
+              <span className="inline-block bg-accent text-white px-3 py-1 rounded-full text-[10px] font-semibold tracking-widest uppercase mb-4">
                 Regularização Empresarial
               </span>
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
@@ -63,7 +74,7 @@ export default function Hero() {
             </div>
             
             <p className="text-gray-300 text-base sm:text-lg max-w-2xl leading-relaxed">
-              CNPJ restrito, débito na Receita Federal, certidão bloqueada — esses problemas têm solução. E quanto antes você olha para eles, menor o custo de resolver. Há 18 anos ajudamos empresas a sair dessa situação com clareza e sem surpresas.
+              CNPJ restrito, débito na Receita Federal, certidão bloqueada: esses problemas têm solução. E quanto antes você olha para eles, menor o custo de resolver. Há 18 anos ajudamos empresas a sair dessa situação com clareza e sem surpresas.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
@@ -89,7 +100,7 @@ export default function Hero() {
           </div>
 
           <div id="diagnostico" className="lg:col-span-5">
-            <div className="bg-white text-charcoal rounded-2xl p-6 sm:p-8 shadow-2xl border border-gray-100 relative">
+            <div className="bg-white/90 backdrop-blur-md text-charcoal rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/40 relative">
               {!submitted ? (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="text-center pb-2 border-b border-gray-100">
@@ -112,7 +123,7 @@ export default function Hero() {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Ex: João Silva"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-light/50 focus:border-primary-light transition-all text-sm"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all text-sm"
                     />
                   </div>
 
@@ -127,7 +138,7 @@ export default function Hero() {
                       value={phone}
                       onChange={handlePhoneChange}
                       placeholder="(11) 99999-9999"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-light/50 focus:border-primary-light transition-all text-sm"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all text-sm"
                     />
                   </div>
 
@@ -140,7 +151,7 @@ export default function Hero() {
                       required
                       value={situation}
                       onChange={(e) => setSituation(e.target.value)}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-light/50 focus:border-primary-light transition-all text-sm bg-white"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all text-sm bg-white"
                     >
                       <option value="">Selecione...</option>
                       <option value="CNPJ com pendência / irregular">CNPJ com pendência / irregular</option>
@@ -153,7 +164,7 @@ export default function Hero() {
 
                   <button
                     type="submit"
-                    className="w-full bg-primary hover:bg-primary-light text-white font-bold py-3.5 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-primary/20 group text-sm"
+                    className="w-full bg-accent hover:bg-primary text-white font-bold py-3.5 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-accent/20 group text-sm"
                   >
                     Quero meu diagnóstico gratuito
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

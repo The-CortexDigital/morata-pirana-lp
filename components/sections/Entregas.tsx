@@ -1,33 +1,40 @@
-export default function Entregas() {
-  const entregas = [
-    {
-      number: "01",
-      title: "Diagnóstico fiscal completo",
-      text: "Análise completa da situação cadastral, fiscal e tributária da sua empresa. Você entende tudo — o que está bem e o que precisa de atenção.",
-    },
-    {
-      number: "02",
-      title: "Regularização de CNPJ e débitos",
-      text: "Pendências na Receita Federal, inscrições estaduais e municipais, certidões bloqueadas — cuidamos de todo o processo de regularização.",
-    },
-    {
-      number: "03",
-      title: "Revisão e recuperação tributária",
-      text: "Identificamos se sua empresa pagou impostos a mais nos últimos 5 anos — e abrimos o processo de restituição quando encontramos algo.",
-    },
-    {
-      number: "04",
-      title: "Assessoria contábil mensal",
-      text: "Depois de regularizar, garantimos que sua empresa nunca mais acumule pendências. Acompanhamento mensal com transparência total.",
-    },
-  ];
+import { Search, ShieldCheck, Coins, CalendarCheck } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
+const ENTREGAS = [
+  {
+    number: "01",
+    Icon: Search,
+    title: "Diagnóstico fiscal completo",
+    text: "Análise completa da situação cadastral, fiscal e tributária da sua empresa. Você entende tudo: o que está bem e o que precisa de atenção.",
+  },
+  {
+    number: "02",
+    Icon: ShieldCheck,
+    title: "Regularização de CNPJ e débitos",
+    text: "Pendências na Receita Federal, inscrições estaduais e municipais, certidões bloqueadas: cuidamos de todo o processo de regularização.",
+  },
+  {
+    number: "03",
+    Icon: Coins,
+    title: "Revisão e recuperação tributária",
+    text: "Identificamos se sua empresa pagou impostos a mais nos últimos 5 anos e abrimos o processo de restituição quando encontramos algo.",
+  },
+  {
+    number: "04",
+    Icon: CalendarCheck,
+    title: "Assessoria contábil mensal",
+    text: "Depois de regularizar, garantimos que sua empresa nunca mais acumule pendências. Acompanhamento mensal com transparência total.",
+  },
+];
+
+export default function Entregas() {
   return (
     <section id="entregas" className="bg-white py-20 lg:py-28 text-charcoal">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block bg-primary-light/10 border border-primary-light/30 text-primary-light px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4">
+
+        <Reveal className="text-center max-w-3xl mx-auto mb-16">
+          <span className="inline-block bg-accent text-white px-3 py-1 rounded-full text-[10px] font-semibold tracking-widest uppercase mb-4">
             Proposta de Valor
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-primary tracking-tight">
@@ -36,33 +43,53 @@ export default function Entregas() {
           <p className="mt-4 text-gray-600 text-base sm:text-lg leading-relaxed">
             Regularização não é só resolver o problema de hoje. É garantir que amanhã sua empresa esteja protegida para crescer.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {entregas.map((entrega, idx) => (
-            <div
-              key={idx}
-              className="group bg-surface p-8 sm:p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:bg-white hover:border-primary-light/30 transition-all duration-300 relative overflow-hidden"
-            >
-              <div className="absolute top-4 right-6 font-serif text-6xl sm:text-7xl font-bold text-primary-light/10 group-hover:text-primary-light/20 transition-colors duration-300 select-none">
-                {entrega.number}
-              </div>
-
-              <div className="relative z-10 space-y-4 max-w-md">
-                <span className="inline-block font-serif text-lg font-bold text-primary-light">
-                  {entrega.number}.
+          {ENTREGAS.map((entrega, idx) => {
+            const isActive = idx === 0;
+            return (
+            <Reveal key={entrega.number} delay={idx * 100} className="h-full">
+              <div
+                className={`group relative h-full p-8 sm:p-10 rounded-2xl border transition-all duration-300 overflow-hidden flex flex-col hover:shadow-xl hover:bg-white hover:border-accent/30 ${
+                  isActive
+                    ? "bg-white shadow-xl border-accent/30"
+                    : "bg-surface shadow-sm border-gray-100"
+                }`}
+              >
+                {/* Número decorativo (único) */}
+                <span
+                  className={`absolute top-5 right-7 font-serif text-6xl sm:text-7xl font-bold transition-colors duration-300 select-none pointer-events-none group-hover:text-accent ${
+                    isActive ? "text-accent" : "text-primary"
+                  }`}
+                >
+                  {entrega.number}
                 </span>
-                
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-primary group-hover:text-primary-light transition-colors duration-300">
-                  {entrega.title}
-                </h3>
-                
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                  {entrega.text}
-                </p>
+
+                {/* Barra azul no topo */}
+                <div
+                  className={`absolute top-0 left-0 right-0 h-1 bg-accent origin-left transition-transform duration-300 rounded-t-2xl group-hover:scale-x-100 ${
+                    isActive ? "scale-x-100" : "scale-x-0"
+                  }`}
+                />
+
+                <div className="relative z-10 space-y-5 max-w-md">
+                  <div className="w-12 h-12 rounded-xl bg-accent text-white flex items-center justify-center shadow-md shadow-accent/25 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-accent/30 transition-all duration-300">
+                    <entrega.Icon className="w-6 h-6" />
+                  </div>
+
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-primary group-hover:text-accent transition-colors duration-300">
+                    {entrega.title}
+                  </h3>
+
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                    {entrega.text}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            </Reveal>
+            );
+          })}
         </div>
 
       </div>

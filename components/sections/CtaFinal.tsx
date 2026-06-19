@@ -6,28 +6,28 @@ export default function CtaFinal() {
   const encodedMsg = encodeURIComponent(defaultMsg);
 
   return (
-    <section id="cta-final" className="relative bg-primary text-white py-20 lg:py-28 overflow-hidden text-center">
-      <div className="absolute inset-0 opacity-10 pointer-events-none flex items-center justify-center">
-        <div className="w-[1000px] h-[1000px] rounded-full border border-white/30 animate-pulse"></div>
-        <div className="absolute w-[800px] h-[800px] rounded-full border border-white/20"></div>
-        <div className="absolute w-[600px] h-[600px] rounded-full border border-white/10"></div>
-        <div className="absolute w-[400px] h-[400px] rounded-full border border-white/5"></div>
+    <section id="cta-final" className="relative bg-surface text-charcoal py-20 lg:py-28 overflow-hidden text-center">
+      <div className="absolute inset-0 opacity-[0.08] pointer-events-none flex items-center justify-center">
+        <div className="w-[1000px] h-[1000px] rounded-full border border-primary/40 animate-pulse"></div>
+        <div className="absolute w-[800px] h-[800px] rounded-full border border-primary/30"></div>
+        <div className="absolute w-[600px] h-[600px] rounded-full border border-primary/20"></div>
+        <div className="absolute w-[400px] h-[400px] rounded-full border border-primary/10"></div>
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div>
-          <span className="inline-block bg-white/10 border border-white/20 text-surface px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase">
+          <span className="inline-block bg-accent text-white px-3 py-1 rounded-full text-[10px] font-semibold tracking-widest uppercase">
             Primeiro Passo
           </span>
         </div>
 
-        <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+        <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-primary">
           Comece com uma conversa. <br />
-          <span className="text-surface">Sem compromisso.</span>
+          <span className="text-accent">Sem compromisso.</span>
         </h2>
 
-        <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-          Oferecemos um diagnóstico inicial gratuito. Você entende a situação real da sua empresa e o que precisa ser feito &mdash; sem pressão, sem surpresa.
+        <p className="text-gray-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
+          Oferecemos um diagnóstico inicial gratuito. Você entende a situação real da sua empresa e o que precisa ser feito, sem pressão, sem surpresa.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -49,16 +49,12 @@ export default function CtaFinal() {
 
           <a
             href={`tel:${CONTACT.phoneTel}`}
-            className="w-full sm:w-auto border border-white hover:bg-white hover:text-primary font-bold py-4 px-8 rounded-lg transition-all duration-300 flex items-center justify-center gap-3 text-sm sm:text-base"
+            className="w-full sm:w-auto border border-primary text-primary hover:bg-primary hover:text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 flex items-center justify-center gap-3 text-sm sm:text-base"
           >
             <Phone className="w-5 h-5" />
-            Ligar agora — {CONTACT.whatsappDisplay}
+            Ligar agora: {CONTACT.whatsappDisplay}
           </a>
         </div>
-
-        <p className="text-gray-400 text-xs sm:text-sm pt-6 border-t border-white/10 max-w-2xl mx-auto leading-relaxed">
-          {CONTACT.address.full}
-        </p>
       </div>
     </section>
   );

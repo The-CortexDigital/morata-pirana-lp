@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Roboto } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,16 +8,10 @@ const inter = Inter({
   display: "swap",
 });
 
-const roboto = Roboto({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-roboto",
-  display: "swap",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-montserrat",
   display: "swap",
 });
 
@@ -32,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${roboto.variable} ${playfair.variable}`}>
+    <html lang="pt-BR" className={`${inter.variable} ${montserrat.variable}`}>
       <body className="font-sans bg-white text-charcoal antialiased">
         {children}
       </body>
