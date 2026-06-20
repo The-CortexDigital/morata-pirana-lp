@@ -46,32 +46,16 @@ export default function Entregas() {
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {ENTREGAS.map((entrega, idx) => {
-            const isActive = idx === 0;
-            return (
+          {ENTREGAS.map((entrega, idx) => (
             <Reveal key={entrega.number} delay={idx * 100} className="h-full">
-              <div
-                className={`group relative h-full p-8 sm:p-10 rounded-2xl border transition-all duration-300 overflow-hidden flex flex-col hover:shadow-xl hover:bg-white hover:border-accent/30 ${
-                  isActive
-                    ? "bg-white shadow-xl border-accent/30"
-                    : "bg-surface shadow-sm border-gray-100"
-                }`}
-              >
+              <div className="group relative h-full bg-surface shadow-sm border border-gray-100 p-8 sm:p-10 rounded-2xl transition-all duration-300 overflow-hidden flex flex-col hover:shadow-xl hover:bg-white hover:border-accent/30">
                 {/* Número decorativo (único) */}
-                <span
-                  className={`absolute top-5 right-7 font-serif text-6xl sm:text-7xl font-bold transition-colors duration-300 select-none pointer-events-none group-hover:text-accent ${
-                    isActive ? "text-accent" : "text-primary"
-                  }`}
-                >
+                <span className="absolute top-5 right-7 font-serif text-6xl sm:text-7xl font-bold text-primary group-hover:text-accent transition-colors duration-300 select-none pointer-events-none">
                   {entrega.number}
                 </span>
 
                 {/* Barra azul no topo */}
-                <div
-                  className={`absolute top-0 left-0 right-0 h-1 bg-accent origin-left transition-transform duration-300 rounded-t-2xl group-hover:scale-x-100 ${
-                    isActive ? "scale-x-100" : "scale-x-0"
-                  }`}
-                />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-accent scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 rounded-t-2xl" />
 
                 <div className="relative z-10 space-y-5 max-w-md">
                   <div className="w-12 h-12 rounded-xl bg-accent text-white flex items-center justify-center shadow-md shadow-accent/25 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-accent/30 transition-all duration-300">
@@ -88,8 +72,7 @@ export default function Entregas() {
                 </div>
               </div>
             </Reveal>
-            );
-          })}
+          ))}
         </div>
 
       </div>

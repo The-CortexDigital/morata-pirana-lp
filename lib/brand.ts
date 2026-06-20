@@ -22,6 +22,7 @@ export const CONTACT = {
   whatsapp: "5511961044321",
   whatsappDisplay: "(11) 96104-4321",
   phoneTel: "+5511961044321",
+  email: "reginaldo@3incontabil.com.br",
   address: {
     street: "Rua José Versolato, 111",
     floor: "11º andar, Sala 1106",
@@ -34,7 +35,7 @@ export const CONTACT = {
 } as const;
 
 export const SOCIAL = {
-  instagram: "#",
+  instagram: "https://www.instagram.com/3in.contabilidade/",
   linkedin: "#",
   facebook: "#",
 } as const;

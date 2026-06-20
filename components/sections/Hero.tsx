@@ -24,9 +24,10 @@ export default function Hero() {
     setPhone(value);
   };
 
-  const buildWhatsappUrl = () => {
-    const formattedMsg = `Olá! Gostaria de solicitar um diagnóstico gratuito.\n\n*Nome:* ${name}\n*WhatsApp:* ${phone}\n*Situação:* ${situation}`;
-    return `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(formattedMsg)}`;
+  const buildMailtoUrl = () => {
+    const subject = "Solicitação de diagnóstico gratuito";
+    const body = `Olá! Gostaria de solicitar um diagnóstico gratuito.\n\nNome: ${name}\nWhatsApp: ${phone}\nSituação: ${situation}`;
+    return `mailto:${CONTACT.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -37,7 +38,7 @@ export default function Hero() {
     }
     setSubmitted(true);
     setTimeout(() => {
-      window.open(buildWhatsappUrl(), "_blank");
+      window.location.href = buildMailtoUrl();
     }, 1500);
   };
 
@@ -60,16 +61,16 @@ export default function Hero() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center lg:items-end">
           
-          <div className="lg:col-span-7 flex flex-col space-y-6">
+          <div className="lg:col-span-8 flex flex-col space-y-6">
             <div>
               <span className="inline-block bg-accent text-white px-3 py-1 rounded-full text-[10px] font-semibold tracking-widest uppercase mb-4">
                 Regularização Empresarial
               </span>
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
-                Sua empresa tem pendência fiscal? <br />
-                <span className="text-surface">A gente resolve.</span>
+                Precisando regularizar sua empresa? <br />
+                <span className="text-surface">Entre em contato.</span>
               </h1>
             </div>
             
@@ -77,7 +78,7 @@ export default function Hero() {
               CNPJ restrito, débito na Receita Federal, certidão bloqueada: esses problemas têm solução. E quanto antes você olha para eles, menor o custo de resolver. Há 18 anos ajudamos empresas a sair dessa situação com clareza e sem surpresas.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-4">
               <div className="flex items-center gap-3">
                 <div className="flex-shrink-0 w-6 h-6 rounded-full bg-white/10 border border-white/20 flex items-center justify-center">
                   <Check className="w-3.5 h-3.5 text-surface" />
@@ -99,12 +100,12 @@ export default function Hero() {
             </div>
           </div>
 
-          <div id="diagnostico" className="lg:col-span-5">
-            <div className="bg-white/90 backdrop-blur-md text-charcoal rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/40 relative">
+          <div id="diagnostico" className="lg:col-span-4">
+            <div className="bg-white/90 backdrop-blur-md text-charcoal rounded-2xl p-5 sm:p-6 shadow-2xl border border-white/40 relative w-full lg:max-w-md lg:ml-auto">
               {!submitted ? (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="text-center pb-2 border-b border-gray-100">
-                    <h2 className="font-serif text-2xl font-bold text-primary">
+                    <h2 className="font-serif text-xl font-bold text-primary">
                       Diagnóstico gratuito
                     </h2>
                     <p className="text-xs text-gray-500 mt-1">
@@ -112,37 +113,39 @@ export default function Hero() {
                     </p>
                   </div>
 
-                  <div className="space-y-1.5">
-                    <label htmlFor="name" className="text-xs font-semibold text-charcoal uppercase tracking-wider">
-                      Seu nome
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      required
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      placeholder="Ex: João Silva"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all text-sm"
-                    />
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="space-y-1">
+                      <label htmlFor="name" className="text-xs font-semibold text-charcoal uppercase tracking-wider">
+                        Seu nome
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        required
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="João Silva"
+                        className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all text-sm"
+                      />
+                    </div>
+
+                    <div className="space-y-1">
+                      <label htmlFor="phone" className="text-xs font-semibold text-charcoal uppercase tracking-wider">
+                        WhatsApp
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        required
+                        value={phone}
+                        onChange={handlePhoneChange}
+                        placeholder="(11) 99999-9999"
+                        className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all text-sm"
+                      />
+                    </div>
                   </div>
 
-                  <div className="space-y-1.5">
-                    <label htmlFor="phone" className="text-xs font-semibold text-charcoal uppercase tracking-wider">
-                      WhatsApp
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      required
-                      value={phone}
-                      onChange={handlePhoneChange}
-                      placeholder="(11) 99999-9999"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all text-sm"
-                    />
-                  </div>
-
-                  <div className="space-y-1.5">
+                  <div className="space-y-1">
                     <label htmlFor="situation" className="text-xs font-semibold text-charcoal uppercase tracking-wider">
                       Qual é a sua situação?
                     </label>
@@ -151,7 +154,7 @@ export default function Hero() {
                       required
                       value={situation}
                       onChange={(e) => setSituation(e.target.value)}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all text-sm bg-white"
+                      className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all text-sm bg-white"
                     >
                       <option value="">Selecione...</option>
                       <option value="CNPJ com pendência / irregular">CNPJ com pendência / irregular</option>
@@ -164,7 +167,7 @@ export default function Hero() {
 
                   <button
                     type="submit"
-                    className="w-full bg-accent hover:bg-primary text-white font-bold py-3.5 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-accent/20 group text-sm"
+                    className="w-full bg-accent hover:bg-primary text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-accent/20 group text-sm"
                   >
                     Quero meu diagnóstico gratuito
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -176,9 +179,9 @@ export default function Hero() {
                 </form>
               ) : (
                 <div className="py-12 px-4 text-center space-y-4 flex flex-col items-center justify-center">
-                  <div className="w-16 h-16 bg-whatsapp/10 rounded-full flex items-center justify-center mb-2">
+                  <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-2">
                     <svg
-                      className="w-8 h-8 text-whatsapp animate-bounce"
+                      className="w-8 h-8 text-accent animate-bounce"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -198,13 +201,13 @@ export default function Hero() {
                     Obrigado, <strong className="text-primary">{name}</strong>. Estamos preparando seu diagnóstico.
                   </p>
                   <p className="text-xs text-gray-400">
-                    Redirecionando para o WhatsApp em instantes...
+                    Abrindo seu e-mail em instantes...
                   </p>
                   <button
-                    onClick={() => window.open(buildWhatsappUrl(), "_blank")}
-                    className="mt-4 bg-whatsapp hover:bg-whatsapp/90 text-white font-bold py-2.5 px-6 rounded-lg transition-all text-xs flex items-center gap-2"
+                    onClick={() => { window.location.href = buildMailtoUrl(); }}
+                    className="mt-4 bg-accent hover:bg-primary text-white font-bold py-2.5 px-6 rounded-lg transition-all text-xs flex items-center gap-2"
                   >
-                    Ir para o WhatsApp agora
+                    Enviar e-mail agora
                   </button>
                 </div>
               )}

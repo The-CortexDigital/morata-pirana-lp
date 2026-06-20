@@ -40,7 +40,7 @@ export default function QuemSomos() {
                   Contador &amp; Consultor
                 </p>
                 <p className="mt-4 pt-4 border-t border-white/15 text-[11px] text-gray-300 tracking-wide">
-                  Reginaldo Ortenzi &nbsp;|&nbsp; CRC 1SP 144.426-O-7
+                  Reginaldo Ortenzi &nbsp;|&nbsp; CRC 1SP 196.329/O-18
                 </p>
               </div>
             </div>
